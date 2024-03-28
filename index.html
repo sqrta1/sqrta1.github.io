@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Отображение модели стола в реальном размере на маркере с использованием A-Frame</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script> <!-- Подключаем A-Frame -->
+</head>
+<body>
+    <a-scene embedded arjs="detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+        <!-- Маркер -->
+        <a-marker preset="hiro">
+            <!-- Модель стола -->
+            <a-entity
+                gltf-model="url(table.glb)" 
+                scale="0.5 0.5 0.5" 
+                position="0 0 0" 
+            ></a-entity>
+        </a-marker>
+        <!-- Камера для AR -->
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+</html>
